@@ -1,89 +1,72 @@
-import React,{Component} from 'react';
-import {BrowserRouter,Switch,Route} from 'react-router-dom'
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
-import Navbar from './components/navbar'
-import Signup from './components/signup'
-import Login from './components/login'
-import BioLink from './dashboard/BioLink'
-import './App.css'
+import React, { Component } from 'react';
 
-import Home from './components/home'
-//import firebase from './services/firebase'
-//import {toast ,ToastContainer} from 'react-toastify'
-import Link from './dashboard/dashboard'
-import Settings from './dashboard/settings'
-import Edit from './dashboard/edit'
-import Logout from './dashboard/logout'
-const theme = createMuiTheme({
-palette: {
-      primary: {
-        light: '#33c9dc',
-        main: '#00bcd4',
-        dark: '#008394',
-        contrastText: '#fff'
-      },
-      secondary: {
-        light: '#ff6333',
-        main: '#ff3d00',
-        dark: '#b22a00',
-        contrastText: '#fff'
-      }
-    ,
-  },
-})
+import {BrowserRouter,Switch,Route,Redirect} from 'react-router-dom'
+import Notfound from './components/Notfound'
+import Navbar from './components/Navbar'
+import Signup from './components/Signup'
+import Login from './components/Login'
+import Reset from './components/Reset'
+import BioLink from './dashboard/Biolink'
+
+import Home from './components/Home'
+import Link from './dashboard/Dashboard'
+import Settings from './dashboard/Settings'
+import Edit from './dashboard/Edit'
+import Logout from './dashboard/Logout'
+import {connect} from 'react-redux'
 class App extends Component {
   
-   
+  
   render() {
-    return ( <>
-     
-       
-        <BrowserRouter>
-        <Switch>
-         <BioRoute path="/admin/:userhandle"exact component={BioLink} ></BioRoute>
-         
-         
-            
+          return (
+    
+            <BrowserRouter>
+            <Switch>
               
+              
+             <BioRoute path={`/admin/${this.props.profile.userhandle}`} exact component={BioLink} ></BioRoute>
+         
              
               
-              <PublicRoute path="/" exact component={Home}></PublicRoute>
-                <PublicRoute path="/login" exact component={Login}></PublicRoute>
-                <PublicRoute path="/signup"exact component={Signup}></PublicRoute>
-                <PublicRoute path="/admin" exact component={Link}></PublicRoute>
-                <PublicRoute path="/settings" exact component={Settings}></PublicRoute>
-                <PublicRoute path="/edit"exact component={Edit}></PublicRoute>
-                <PublicRoute path="/logout"exact component={Logout} ></PublicRoute>
-                </Switch>
-    
-            
-            
-              
-            </BrowserRouter>
-         
-         
-         
+                
+                  
+                 
+                  
+                  <PublicRoute path="/" exact component={Home}></PublicRoute>
+                    <PublicRoute path="/login" exact component={Login}></PublicRoute>
+                    <PublicRoute path="/login/resetpassword" exact component={Reset}></PublicRoute>
+                    <PublicRoute path="/signup"exact component={Signup}></PublicRoute>
+                    <PublicRoute path="/admin" exact component={Link}></PublicRoute>
+                    <PublicRoute path="/settings" exact component={Settings}></PublicRoute>
+                    <PublicRoute path="/edit"exact component={Edit}></PublicRoute>
+                    <PublicRoute path="/logout"exact component={Logout} ></PublicRoute>
+                    <BioRoute  component={Notfound} ></BioRoute>
+                    </Switch>
         
-      
-      
-      </>
-    )
+                
+                
+                  
+                </BrowserRouter>
+  );
 }
 }
-export default App
 
+const mapstatetoprops=state=>({
+  profile:state.firebase.profile
+})
+export default connect(mapstatetoprops)(App);
 const PublicRoute=({component:Component,...rest})=>{
   return (
     <Route {...rest} component={(props)=>(
-      <ThemeProvider theme={theme}>
-      <Navbar/>
+      <>
+     <Navbar/>
       <div className="container">
            
            <Component {...props}></Component>
 
       </div>
-      <footer style={{fontSize:19,position:"fixed",bottom:1,left:"38%",border:"2px solid black",padding:"9px 12px 9px 10px",borderRadius:6,color:"black",  backgroundImage: "linear-gradient(to bottom right,red,yellow)"}}>For any queries Email  at <a style={{color:"black",textDecoration:"underline"}}href="http://www.gmail.com">avineykhetarpal01@gmail.com</a></footer>
-      </ThemeProvider>
+     
+   </>
 
     )}/>
   )
@@ -92,11 +75,15 @@ const PublicRoute=({component:Component,...rest})=>{
 const BioRoute=({component:Component,...rest})=>{
   return (
     <Route {...rest} component={(props)=>(
-     
+     <>
+           <div className="container">
+           
            <Component {...props}></Component>
 
-      
-     
+      </div>
+              
+          
+     </>
 
     )}/>
   )

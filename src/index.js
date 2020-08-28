@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import '@fortawesome/fontawesome-free/css/all.min.css'; import
+'bootstrap-css-only/css/bootstrap.min.css'; import
+'mdbreact/dist/css/mdb.css';
 import {Provider,useSelector} from 'react-redux'
 import App from './App';
-
-import Logo from './pictures/logo1.png'
+import './App.css'
 import * as serviceWorker from './serviceWorker';
 import {createStore,compose,applyMiddleware} from 'redux'
 import thunk from 'redux-thunk'
-import CircularProgress from '@material-ui/core/CircularProgress'
+
 import {reduxFirestore,getFirestore,createFirestoreInstance} from 'redux-firestore'
 import{ReactReduxFirebaseProvider,getFirebase,isLoaded} from 'react-redux-firebase'
 import {rootreducer} from './redux/reducer/rootreducer'
@@ -29,10 +31,11 @@ const rrfprops={
 }
 function Authisloaded({children}){
   const auth=useSelector(state=>state.firebase.auth)
-  if (!isLoaded(auth))return  <>
+  if (!isLoaded(auth))return  <React.Fragment >
   
-     
-  <CircularProgress size={90} style={{position:"absolute",left:750,top:"40%"}}></CircularProgress></>
+  <div className="spinner-border text-primary  " style={{position:"absolute",top:"45%",left:"50%"}}role="status">
+        <span className="sr-only">Loading...</span>
+      </div></React.Fragment>
   ;return children
  }
 ReactDOM.render(
@@ -55,3 +58,4 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+
