@@ -1,0 +1,17 @@
+#icon{
+    position: absolute;
+    
+    right:32%;
+    cursor: pointer;
+    margin-top: -28px;
+}
+.link{
+    padding: 8px 16px;margin-left: 8px;border-radius: 25px;
+    color: #3c3c3c;text-decoration:underline;background-color: rgb(238, 232, 232)
+  }
+  .datas{
+  
+     float: right;
+     margin-right: -15%;
+  }
+  

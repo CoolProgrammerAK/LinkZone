@@ -1,0 +1,254 @@
+.squares {
+    z-index: -1;
+    position: absolute;
+    -webkit-transition: 0.5s ease-out;
+    transition: 0.5s ease-out;
+    overflow: hidden;
+    border-radius: 20%;
+    background: #3358f4;
+    background: -webkit-linear-gradient(0deg, #3358f4 0%, #1d8cf8 100%);
+    background: -webkit-gradient(linear, left bottom, left top, from(#3358f4), to(#1d8cf8));
+    background: -webkit-linear-gradient(bottom, #3358f4 0%, #1d8cf8 100%);
+    background: linear-gradient(0deg, #3358f4 0%, #1d8cf8 100%);
+  }
+  .squares.square1 {
+    -webkit-animation: move-left-right 4s infinite;
+    animation: move-left-right 4s infinite;
+    height: 300px;
+    width: 300px;
+    opacity: 0.5;
+    left: 2%;
+    top: -17%;
+  }
+ 
+  .squares.square2 {
+    -webkit-animation: move-left-right 6s infinite;
+    animation: move-left-right 6s infinite;
+    height: 400px;
+    width: 400px;
+    opacity: 0.4;
+    right: 5%;
+    top: -28%;
+  }
+  .squares.square3 {
+    -webkit-animation: move-left-right 5s infinite;
+    animation: move-left-right 5s infinite;
+    height: 200px;
+    width: 200px;
+    opacity: 0.3;
+    left: 0%;
+    bottom: 0%;
+  }
+  .squares.square4 {
+    -webkit-animation: move-left-right 10s infinite;
+    animation: move-left-right 10s infinite;
+    height: 100px;
+    width: 100px;
+    opacity: 0.9;
+    right: 37%;
+    top: 70%;
+  }
+  .squares.square5 {
+    -webkit-animation: move-left-right 6s infinite;
+    animation: move-left-right 6s infinite;
+    height: 250px;
+    width: 250px;
+    opacity: 0.1;
+    left: 32%;
+    bottom: 29%;
+  }
+  .squares.square6 {
+    -webkit-animation: move-left-right 9s infinite;
+    animation: move-left-right 9s infinite;
+    left: 10%;
+    top: 37%;
+    height: 80px;
+    width: 80px;
+    opacity: 0.8;
+  }
+  .squares.square7 {
+    -webkit-animation: move-left-right 3s infinite;
+    animation: move-left-right 3s infinite;
+    width: 300px;
+    height: 300px;
+    right: 3%;
+    bottom: 0%;
+    opacity: 0.1;
+  }
+  @keyframes move-left-right {
+    0% {
+      -webkit-transform: translateX(-10px);
+      transform: translateX(-10px);
+    }
+  
+    50% {
+      -webkit-transform: translateX(10px);
+      transform: translateX(10px);
+    }
+    100% {
+      -webkit-transform: translateX(-10px);
+      transform: translateX(-10px);
+    }
+  }
+
+  #heading{
+      font-size: 3.4rem;
+  }
+  @media only screen and (max-width:1000px){
+    #heading{
+        font-size: 2.7rem;
+    }
+  }
+  @media (min-width:1050px) and (max-width:1500px){
+    .squares.square6 {
+   
+        left: 10%;
+    top: 38%;
+    height: 80px;
+    width: 80px;
+      }
+  }
+
+  @media (min-width:600px) and (max-width:1050px){
+    .squares.square1 {
+        -webkit-animation: move-left-right 4s infinite;
+        animation: move-left-right 4s infinite;
+        height: 200px;
+        width: 200px;
+        opacity: 0.5;
+        left: 3%;
+        top: -4%;
+      }
+     
+      .squares.square2 {
+        -webkit-animation: move-left-right 6s infinite;
+        animation: move-left-right 6s infinite;
+        height: 250px;
+        width: 250px;
+        opacity: 0.4;
+        right: 3%;
+        top: -12%;
+      }
+      .squares.square3 {
+        -webkit-animation: move-left-right 5s infinite;
+        animation: move-left-right 5s infinite;
+        height: 170px;
+        width: 170px;
+        opacity: 0.1;
+        left: 0%;
+        bottom: 0%;
+      }
+      .squares.square4 {
+        -webkit-animation: move-left-right 10s infinite;
+        animation: move-left-right 10s infinite;
+        height: 80px;
+        width: 80px;
+        opacity: 0.9;
+        right: 39%;
+        top: 74%;
+      }
+      .squares.square5 {
+        -webkit-animation: move-left-right 6s infinite;
+        animation: move-left-right 6s infinite;
+        height: 180px;
+        width: 180px;
+        opacity: 0.1;
+        left: 32%;
+        bottom: 29%;
+      }
+      .squares.square6 {
+        -webkit-animation: move-left-right 9s infinite;
+        animation: move-left-right 9s infinite;
+        left: 10%;
+        top: 35%;
+        height: 80px;
+        width: 80px;
+        opacity: 0.8;
+      }
+      .squares.square7 {
+        -webkit-animation: move-left-right 3s infinite;
+        animation: move-left-right 3s infinite;
+        width: 200px;
+        height: 200px;
+        right: 3%;
+        bottom: 15%;
+        opacity: 0.2;
+      }
+  }
+  @media (min-width:0px) and (max-width:600px){
+    .squares.square1 {
+        -webkit-animation: move-left-right 4s infinite;
+        animation: move-left-right 4s infinite;
+        height: 130px;
+        width: 139px;
+        opacity: 0.5;
+        left: 3%;
+        top: 3%;
+      }
+     
+      .squares.square2 {
+        -webkit-animation: move-left-right 6s infinite;
+        animation: move-left-right 6s infinite;
+        height: 160px;
+        width: 160px;
+        opacity: 0.4;
+        right: 3%;
+        top: 1%;
+      }
+      .squares.square3 {
+        -webkit-animation: move-left-right 5s infinite;
+        animation: move-left-right 5s infinite;
+        height: 150px;
+        width: 150px;
+        opacity: 0.1;
+        left: 0%;
+        bottom: 2%;
+      }
+      .squares.square4 {
+        -webkit-animation: move-left-right 10s infinite;
+        animation: move-left-right 10s infinite;
+        height: 50px;
+        width: 50px;
+        opacity: 0.9;
+        right: 45%;
+        top: 74%;
+      }
+      .squares.square5 {
+        -webkit-animation: move-left-right 6s infinite;
+        animation: move-left-right 6s infinite;
+        height: 140px;
+        width: 140px;
+        opacity: 0.1;
+        left: 32%;
+        bottom: 43%;
+        
+      }
+      .squares.square6 {
+        -webkit-animation: move-left-right 9s infinite;
+        animation: move-left-right 9s infinite;
+        left: 6%;
+        top: 35%;
+        height: 60px;
+        width: 60px;
+        opacity: 0.8;
+      }
+      .squares.square7 {
+        -webkit-animation: move-left-right 3s infinite;
+        animation: move-left-right 3s infinite;
+        width: 150px;
+        height: 150px;
+        right: 3%;
+        bottom: 15%;
+        opacity: 0.2;
+      }
+  }
+  #home{
+    margin-top:25%;
+    padding:1%
+  }
+  @media only screen and (max-width:338px){
+    #home{
+      margin-top:150px;
+      padding:1%
+    }
+  }
