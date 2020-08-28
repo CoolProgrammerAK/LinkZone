@@ -1,4 +1,4 @@
-import {LOADING_DATA,LINK_ERROR,SET_LINK,CLEAR_ERROR, OPEN_ALERT, HIDE_ALERT, DELETE_LINK, DELETE_ALERT, DELETEHIDE_ALERT, UPDATE_DATA,UPDATE_ERROR} from '../type/type'
+import {LOADING_DATA,LINK_ERROR,SET_LINK,CLEAR_ERROR,UPDATE_ALERT,UPDATEHIDE_ALERT, OPEN_ALERT, HIDE_ALERT, DELETE_LINK, DELETE_ALERT, DELETEHIDE_ALERT, UPDATE_DATA,UPDATE_ERROR} from '../type/type'
 
 export const setlink=(uid,link)=>(dispatch,getState,{getFirebase,getFirestore})=>{
     const firestore=getFirestore()
@@ -26,7 +26,7 @@ export const setlink=(uid,link)=>(dispatch,getState,{getFirebase,getFirestore})=
 export const deletelink=id=>(dispatch,getState,{getFirestore})=>{
   const firestore=getFirestore()
   firestore.collection('links').doc(id).delete().then(()=>{
-      dispatch({type:DELETE_LINK})}).then(()=>{
+      dispatch({type:DELETE_LINK})
         dispatch({type:DELETE_ALERT})
         setTimeout(() => {
             dispatch({type:DELETEHIDE_ALERT})
@@ -48,7 +48,19 @@ export const deletelink=id=>(dispatch,getState,{getFirestore})=>{
         dispatch({
             type:UPDATE_DATA
         })
+        dispatch({
+            
+            type:UPDATE_ALERT
+        })
+        setTimeout(() => {
+            dispatch({type:UPDATEHIDE_ALERT})
+        }, 3000);
         dispatch({type:CLEAR_ERROR})
+     
+        
+    
     }).catch(err=>{
         dispatch({ type: UPDATE_ERROR, err });
 })}
+
+

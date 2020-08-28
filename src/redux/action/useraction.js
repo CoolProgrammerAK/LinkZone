@@ -1,4 +1,4 @@
-import { SIGNUP_ERROR, SET_USER,SIGNOUT_SUCCESS,LOGIN_ERROR,LOGIN_SUCCESS,SIGNUP_SUCCESS,LOADING_UI,IMAGE_ERROR, IMAGE_SUCCESS, THEME_UPDATE, THEME_LINK, THEME_LINKOFF} from '../type/type'
+import { SIGNUP_ERROR, SET_USER,SIGNOUT_SUCCESS,LOGIN_ERROR,LOGIN_SUCCESS,SIGNUP_SUCCESS,LOADING_UI,IMAGE_ERROR, IMAGE_SUCCESS, THEME_UPDATE, THEME_LINK, THEME_LINKOFF, RESET_LINK, RESET_LINKOFF, RESET} from '../type/type'
 import { storage } from 'firebase'
  
 
@@ -11,7 +11,7 @@ export const signUp=(data,history)=>(dispatch,getState,{getFirebase,getFirestore
  firestore.collection('users').doc(res.user.uid).set({
             userhandle: data.userhandle,
             email: data.email,
-            password:data.password,
+       
             uid:res.user.uid,
             url:data.url,
             theme:"Default"
@@ -46,8 +46,32 @@ export const logIn=(data,history)=>(dispatch,getState,{getFirebase})=>{
       });
   
     }
-  
-  
+    export const logInwithgoogle=(history)=>(dispatch,getState,{getFirestore,getFirebase})=>{
+    
+        const firebase=getFirebase()
+        const firestore = getFirestore()
+        firebase.auth().signInWithPopup(new firebase.auth.GoogleAuthProvider()).then((res) => {
+     
+       firestore.collection('users').doc(res.user.uid).set({
+        userhandle: res.user.displayName,
+        email: res.user.email,
+        
+        uid:res.user.uid,
+        url:`https://firebasestorage.googleapis.com/v0/b/webapp-851e5.appspot.com/o/no_img.png?alt=media`,
+        theme:"Default"
+      }
+     )
+            dispatch({ type: LOGIN_SUCCESS })
+
+          
+            history.push('/admin');
+          }).catch((err) => {
+            dispatch({ type: LOGIN_ERROR, err });
+          });
+      
+        }
+
+      
   export const signOut = () => {
     return (dispatch, getState, {getFirebase}) => {
       const firebase = getFirebase();
@@ -95,7 +119,32 @@ export const logIn=(data,history)=>(dispatch,getState,{getFirebase})=>{
     dispatch({type:THEME_LINK})
     setTimeout(() => {
         dispatch({type:THEME_LINKOFF})
-    }, 3000);
+    }, 3000) 
    }).catch(err=>{
        console.log(err)
+})}
+
+export const reset=(email,history)=>(dispatch,getState,{getFirestore,getFirebase})=>{
+  const firestore=getFirestore()
+  const firebase=getFirebase()
+  firebase.auth().sendPasswordResetEmail(email).then(()=>{
+       dispatch({
+           type:RESET
+       })
+       
+       
+   }).then(()=>{
+    dispatch({type:RESET_LINK,
+      payload:"Email sent successfully.Go check your inbox",color:"success"
+    })
+    setTimeout(() => {
+        dispatch({type:RESET_LINKOFF})
+    }, 3000) 
+   }).catch(err=>{
+    dispatch({type:RESET_LINK,
+      payload:"Some error occurred.Try again",color:"error"
+    })
+    setTimeout(() => {
+        dispatch({type:RESET_LINKOFF})
+    }, 3000)
 })}
