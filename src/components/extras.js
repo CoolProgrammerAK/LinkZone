@@ -27,19 +27,22 @@ const islink=string=>{
 export const validatesign=data=>{
     let errors={}
     if(isempty(data.email)){
-     errors.email="email must not be empty"
+     errors.email="Email must not be empty"
     }
     else if(!isemail(data.email)){
       errors.email="Enter a valid email"
     }
     if (isempty(data.password)){
-        errors.password="enter password"
+        errors.password="Enter password"
     }
-    if(data.confirmpassword!==data.password){
-       errors.confirmpassword="Password must match"
+    if (isempty(data.confirmpassword)){
+        errors.confirmpassword="Please confirm the password"
+    }
+    else if(data.confirmpassword!==data.password){
+       errors.confirmpassword2="Password must match"
     }
     if (isempty(data.userhandle)){
-        errors.userhandle="enter handle"
+        errors.userhandle="Enter userhandle"
     }
    return {
         errors,
@@ -68,17 +71,16 @@ export const validatelogin=data=>{
 
 export const validatelink=data=>{
     let errors={}
+    
+
     if (data.link.trim()===""){
         errors.link="Enter link"
     }
-    else if(!islink(data.link)){
+   else if(!islink(data.link)){
         errors.link="Enter a valid url"
       }
       if (data.title.trim()===""){
         errors.title="Enter title"
-    
-    
-
     }
     else if (data.title.length<4){
         errors.title="Title should be more than 4 characters"
