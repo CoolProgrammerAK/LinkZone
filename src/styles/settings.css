@@ -1,0 +1,32 @@
+#icon{
+    position: absolute;
+    
+    right:32%;
+    cursor: pointer;
+    margin-top: -28px;
+}
+#link{
+    padding: 8px 16px;margin-left: 8px;border-radius: 25px;
+    color: #3c3c3c;text-decoration:underline;background-color: rgb(238, 232, 232)
+  }
+#link:hover{
+     color:#0e0d0d;text-decoration:none;
+  }
+  
+  .datas{
+  
+     text-align: end;
+  }
+  @media only screen and (max-width:900px){
+    .datas{
+  
+        text-align: center;
+     }
+  }
+  @media only screen and (max-width:559px){
+    .datas{
+  
+        display: flex;
+        flex-direction: column;
+     }
+  }

@@ -1,0 +1,23 @@
+export const SET_USER="SET_USER"
+export const LOADING_UI="LOADING_UI"
+export const SIGNUP_ERROR="SIGNUP_ERROR"
+export const SIGNUP_SUCCESS="SIGNUP_SUCCESS"
+export const LOGIN_ERROR="LOGIN_ERROR"
+export const LOGIN_SUCCESS="LOGIN_SUCCESS"
+export const SIGNOUT_SUCCESS="SIGNOUT_SUCCESS"
+export const LOADING_DATA="LOADING_DATA"
+export const SET_LINK="SET_LINK"
+export const LINK_ERROR="LINK_ERROR"
+export const CLEAR_ERROR="CLEAR_ERROR"
+export const DELETE_LINK="DELETE_LINK"
+
+export const RESET_UPDATE="RESET_UPDATE"
+
+export const RESET_LOADER="RESET_LOADER"
+export const UPDATE_DATA="update_data"
+export const UPDATE_ERROR="UPDATE_ERROR"
+export const IMAGE_ERROR="IMAGE_ERROR"
+export const IMAGE_SUCCESS="IMAGE_SUCCESS"
+export const THEME_UPDATE="THEME_UPDATE"
+
+export const THEME_LOADER="THEME_LOADER"

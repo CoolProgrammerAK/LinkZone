@@ -1,0 +1,236 @@
+
+#user{
+    font-weight:bold
+}
+#icons{
+ margin-top:9%
+}
+#iconp{
+    margin:8px
+   }
+
+   .btn-default{
+       background-color: white;
+   }
+.theme{
+   
+     max-width: 100%;
+    padding:8px 8px 0px 8px;
+    margin-top:20px
+}
+
+.theme1{
+        background-color: aqua;
+}
+
+.theme2{
+ background-color: #43608b;
+ color:white
+}
+.theme3{
+  
+    background-color: #39e09b;
+    
+  
+    
+}
+.theme4{
+    background-color: #1f1c1c; color:white
+    
+}
+.theme5{
+    color:white;
+    background: #cb356b;
+    background: -webkit-linear-gradient(to bottom, #cb356b, #bd3f32);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #cb356b, #bd3f32);
+    
+}
+.theme6{
+  color:white;
+    background: #0f0c29;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #0f0c29, #302b63,#24243e);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #0f0c29, #302b63,#24243e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+    
+}
+.theme7{
+
+    background: #7f00ff;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #7f00ff, #e100ff);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #7f00ff, #e100ff);  color:white
+}
+.theme8{
+
+    background-color: aqua;
+    background: #2BC0E4;  /* fallback for old browsers */
+    background:linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)}
+.theme9{
+
+    background-color: aqua;
+    background: #2BC0E4;  /* fallback for old browsers */
+ 
+    background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)
+}
+
+.dot{
+    margin-top: 27px;
+}
+.theme1 .dot{
+  border: 2px solid black;
+  transition: .5s ease-in-out;
+      
+}
+ .theme1 .text{
+  color:black
+}
+.theme1 .dot:hover{
+ 
+  background-color: black;color:white
+   
+}
+.theme2 .dot:hover{
+  background-color: #1f1c1c;
+  color: white;
+ 
+}
+.theme3 .dot:hover{
+  background-color: #777476;
+ 
+}
+.theme4 .dot:hover{
+  background-color: white; color:black
+ 
+}
+.theme5 .dot:hover{
+  background-color: white;color:black
+ 
+}
+.theme6 .dot:hover{
+  background-color: white; color:black
+ 
+}.theme7 .dot:hover{
+  background-color: white;color:black
+ 
+}.theme8 .dot:hover{
+  background-color: black;color:white
+ 
+}
+.theme9 .dot:hover{
+  background-color: black;color:white
+ 
+}
+
+.theme2 .dot {
+   
+        background-color: white;
+        transition: .5s ease-in-out;
+      }
+  .theme3 .dot {
+    background-color: white;
+  transition: .5s ease-in-out;
+  }
+
+  .theme4 .dot {
+    border: 2px solid white;
+  transition: .5s ease-in-out;
+  }
+  .theme5 .dot {
+    border: 2px solid white;
+  transition: .5s ease-in-out;
+    
+  }
+  .theme6 .dot {
+    border: 2px solid white;
+  transition: .5s ease-in-out;
+  
+  }
+  .theme7 .dot {
+    border: 2px solid white;
+  transition: .5s ease-in-out;
+    
+  }
+  .theme8 .dot {
+    border: 2px solid black;
+  transition: .5s ease-in-out;
+  
+  }
+  .theme9 .dot {
+    border: 2px solid black;
+  transition: .5s ease-in-out;
+  
+  }
+ 
+
+  .active-theme{
+      border:3px solid orangered
+  }
+
+.theme5 .text{
+  color:white
+}
+.theme6 .text{
+  color:white
+}
+.theme7 .text{
+  color:white
+}
+.theme8 .text{
+  color:black
+}
+.theme9 .text{
+  color:black
+}
+
+.theme10{
+        background-image: linear-gradient(to bottom right,red,yellow);
+}
+.theme10 .dot {
+  border: 2px solid white;
+  color: white;
+
+}
+.theme10 .dot:hover {
+  background-color: white;color:black
+
+}
+
+/* Default */
+.default{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  z-index: 35;
+  position: fixed;
+  top: 0em;
+  left: 0em;
+  
+}
+.theme-0{
+
+  background: #4170a5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom,#ece9e6,#e9e2e2);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom,#ece9e6,#e9e2e2)
+}
+.theme-0 .dot{
+  border: 2px solid black;
+  transition: .5s ease-in-out;
+
+}
+.theme-0 .dot:hover{
+  background-color: black;
+  color: white;
+}
+.theme-0 .text {
+color: black
+}
+
+.custom-select{
+  box-shadow:none;
+  outline:none;
+}
+
+.custom-select:focus{
+  box-shadow:none;
+  outline:none;
+}
