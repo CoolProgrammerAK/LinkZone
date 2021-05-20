@@ -21,8 +21,8 @@ Linkzone-The only link you will ever need.
 
 ## Installation
 
-* `git clone git@github.com:the-road-to-react-with-firebase/react-firebase-authentication.git`
-* `cd react-firebase-authentication`
+* `git clone https://github.com/CoolProgrammerAK/LinkZone.git`
+* `cd LinkZone-master`
 * `npm install`
 * `npm start`
 * visit http://localhost:3000
