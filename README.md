@@ -1,9 +1,21 @@
 ## LinkZone
 Linkzone-The only link you will ever need.
-## Technologies used
-   For Frontend- React/Redux.\
-   For Backend -Firebase.\
-   For CSS- MDBReact.
+## Features
+
+* Uses:
+  * only React (create-react-app)
+  * firebase
+  * react-router
+  * redux
+* Features:
+  * Sign In
+  * Sign Up
+  * Sign Out
+  * Password Forget
+  * Protected Routes with Authorization
+  * Social Logins with Google and Facebook
+  * Linking of Social Logins on Account dashboard
+  * Database with Users
 
 ## Getting Started with Create React App
 
