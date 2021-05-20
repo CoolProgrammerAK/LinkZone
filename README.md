@@ -1,9 +1,9 @@
 ## LinkZone
 Linkzone-The only link you will ever need.
 ## Technologies used
-   For Frontend- React/Redux
-   For Backend - Firebase
-   For CSS- MDBReact
+   For Frontend- React/Redux.\
+   For Backend -Firebase.\
+   For CSS- MDBReact.
 
 ## Getting Started with Create React App
 
