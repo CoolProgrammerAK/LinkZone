@@ -47,14 +47,7 @@ Get an overview of Firebase, how to create a project, what kind of features Fire
 * [Facebook](https://www.robinwieruch.de/firebase-facebook-login/)
 * [Troubleshoot](https://www.robinwieruch.de/react-firebase-social-login/)
 
-### Activate Sign-In Methods
 
-![firebase-enable-google-social-login_640](https://user-images.githubusercontent.com/2479967/49687774-e0a31e80-fb42-11e8-9d8a-4b4c794134e6.jpg)
-
-* Email/Password
-* [Google](https://www.robinwieruch.de/react-firebase-social-login/)
-* [Facebook](https://www.robinwieruch.de/firebase-facebook-login/)
-* [Troubleshoot](https://www.robinwieruch.de/react-firebase-social-login/)
 
 ### Security Rules for Cloud Firestore
 
