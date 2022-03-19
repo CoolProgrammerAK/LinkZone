@@ -30,7 +30,7 @@ class App extends Component {
                        <BrowserRouter>
                     <Switch>
                       
-                    <Route path={"/admin/:profile"} exact component={BioLink} ></Route>
+                    
                     <Route path="/" exact component={Home}></Route>
                     <Route path="/login" exact component={Login}></Route>
                     <Route path="/login/resetpassword" exact component={Reset}></Route>
@@ -39,7 +39,7 @@ class App extends Component {
                     <Route path="/settings" exact component={Settings}></Route>
                     <Route path="/edit"exact component={Edit}></Route>
                     <Route path="/logout"exact component={Logout} ></Route>
-                    
+                    <Route path={"/:profile"} exact component={BioLink} ></Route>
                    
                     <Route  component={Notfound} ></Route>
                     </Switch>

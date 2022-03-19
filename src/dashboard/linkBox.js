@@ -11,13 +11,13 @@ function LinkBox({profile}) {
           My Bio Link:
         </MDBTypography>
         <a
-          href={`/admin/${profile.userhandle}`}
+          href={`/${profile.uid}`}
           target="_blank"
           rel="noopener noreferrer"
           id="link"
         >
           <strong>
-            {window.location.origin}/admin/{profile.userhandle}
+            {window.location.origin}/{profile.uid}
           </strong>
         </a>
       </div>

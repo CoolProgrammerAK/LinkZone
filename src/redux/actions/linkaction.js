@@ -51,4 +51,21 @@ export const deletelink=id=>(dispatch,getState,{getFirestore})=>{
         dispatch({ type: UPDATE_ERROR, err });
 })}
 
+export const getcustomdata=(id,history,setdata)=>(dispatch,getState,{getFirestore})=>{
+    const firestore=getFirestore()
+    firestore.collection('users').doc(id).get().then((query)=>{
+        
+      if(!query.exists){
+          history.push('/page-not-found/404')
+      }
+     firestore.collection('links').where('uid','==',query.data().uid).get().then((data)=>{
+        
+        setdata(query.data(),data.docs)
+
+     })
+     }).catch(err=>{
+        //  dispatch({ type: UPDATE_ERROR, err });
+ })}
+
+
 
