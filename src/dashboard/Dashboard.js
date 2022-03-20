@@ -43,15 +43,22 @@ class dashboard extends React.Component {
         this.state.link.includes("www."))
     ) {
       link = `https://${this.state.link}`;
+    }else if (
+       ( this.state.link.substring(0, 7) == "http://" && !this.state.link.includes("www.")) ||
+        (this.state.link.substring(0, 8) == "https://" && !this.state.link.includes("www."))
+      ) {
+        link = `${this.state.link}`;
+       
     } else if (
       this.state.link.substring(0, 12) !== "https://www." ||
       this.state.link.substring(0, 11) !== "http://www."
     ) {
       link = `https://www.${this.state.link}`;
-    } else {
+    } 
+    else {
       link = this.state.link;
     }
-
+console.log(link)
     const linkdata = {
       title: this.state.title,
       link: link,
